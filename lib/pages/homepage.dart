@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    
     all_selected_tasks = TaskerPreference.getString() ?? [];
     super.initState();
     refreshNote();
@@ -37,12 +37,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void dispose() {
-    // TODO: close Database of Note ...
+   
     NotesDatabase.instance.close();
     super.dispose();
   }
 
-  // Todo for load notd from Database ..
+  
   Future refreshNote() async {
     setState(() => true);
     notes = await NotesDatabase.instance.readAllNotes();
@@ -219,7 +219,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   .delete(note.id!);
                                               refreshNote();
                                             },
-                                            backgroundColor: Color.fromARGB(
+                                            backgroundColor: const Color.fromARGB(
                                                 255, 229, 19, 19),
                                             foregroundColor: Colors.white,
                                             icon: Icons.delete,
@@ -238,7 +238,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               refreshNote();
                                             },
                                             backgroundColor:
-                                                Color.fromARGB(255, 4, 74, 132),
+                                                const Color.fromARGB(255, 4, 74, 132),
                                             foregroundColor: Colors.white,
                                             label: "Edit",
                                             borderRadius:
